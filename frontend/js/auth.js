@@ -7,7 +7,7 @@ async function login() {
 
     try {
 
-        const res = await fetch("http://localhost:5000/api/auth/login", {
+        const res = await fetch("https://finalyear-project-github-io.onrender.com/api/auth/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -47,7 +47,7 @@ async function register() {
 
     try {
 
-        const res = await fetch("http://localhost:5000/api/auth/register", {
+        const res = await fetch("https://finalyear-project-github-io.onrender.com/api/auth/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -88,7 +88,7 @@ function handleGoogleResponse(response) {
 
     // send to backend
 
-    fetch("http://localhost:5000/api/auth/google", {
+    fetch("https://finalyear-project-github-io.onrender.com/api/auth/google", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -123,7 +123,7 @@ function handleGoogleResponse(response) {
 
     // send to backend
 
-    fetch("http://localhost:5000/api/auth/google", {
+    fetch("https://finalyear-project-github-io.onrender.com/api/auth/google", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
