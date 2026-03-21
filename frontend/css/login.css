@@ -1,3 +1,4 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
-
-
-/* VIDEO BACKGROUND */
-
+/* BACKGROUND VIDEO */
 #bg-video {
     position: fixed;
     width: 100%;
@@ -19,18 +17,16 @@
 }
 
 /* MAIN LAYOUT */
-
 .main-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: clamp(20px, 5vw, 80px);
     min-height: 100vh;
-    padding: 40px;
+    padding: clamp(15px, 4vw, 60px);
 }
 
 /* LEFT TEXT */
-
 .left-content {
     flex: 1;
     color: white;
@@ -38,19 +34,17 @@
 }
 
 .left-content h1 {
-    font-size: 42px;
+    font-size: clamp(24px, 4vw, 60px);
     margin-bottom: 20px;
-    font-family: Monospace;
+    font-family: monospace;
 }
 
 .left-content p {
-    font-size: 20px;
+    font-size: clamp(14px, 2vw, 22px);
     line-height: 1.6;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* RIGHT SIDE */
-
 .auth-wrapper {
     flex: 1;
     display: flex;
@@ -58,11 +52,10 @@
 }
 
 /* GLASS BOX */
-
 .auth-box {
     width: 100%;
-    max-width: 350px;
-    padding: 25px;
+    max-width: clamp(300px, 40vw, 500px);
+    padding: clamp(15px, 2vw, 30px);
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(15px);
@@ -72,7 +65,6 @@
 }
 
 /* TOGGLE */
-
 .toggle-container {
     position: relative;
     display: flex;
@@ -98,7 +90,6 @@
 }
 
 /* SLIDER */
-
 .slider {
     position: absolute;
     width: 50%;
@@ -110,7 +101,6 @@
 }
 
 /* FORM WRAPPER */
-
 .form-wrapper {
     display: flex;
     width: 200%;
@@ -118,14 +108,13 @@
 }
 
 /* EACH FORM */
-
 .form {
-    width: 50%;
-    padding: 26px;
+   min-width: 50%;
+    padding: clamp(45px, 1vw, 105px);
+    flex-shrink: 0;
 }
 
 /* INPUT */
-
 .input-group {
     position: relative;
     margin: 15px 0;
@@ -133,14 +122,14 @@
 
 .input-group input {
     width: 100%;
-    padding: 12px;
+    padding: clamp(10px, 1.5vw, 14px);
     border-radius: 8px;
     border: none;
     outline: none;
+    font-size: clamp(14px, 1.2vw, 18px);
 }
 
 /* LABEL */
-
 .input-group label {
     position: absolute;
     top: 12px;
@@ -149,10 +138,9 @@
     transition: 0.3s;
 }
 
-/* FLOAT */
-
-.input-group input:focus+label,
-.input-group input:valid+label {
+/* FLOAT LABEL */
+.input-group input:focus + label,
+.input-group input:valid + label {
     top: -8px;
     left: 8px;
     font-size: 12px;
@@ -160,7 +148,6 @@
 }
 
 /* EYE ICON */
-
 .input-group span {
     position: absolute;
     right: 10px;
@@ -169,52 +156,19 @@
 }
 
 /* BUTTON */
-
 button {
     width: 100%;
-    padding: 12px;
+    padding: clamp(10px, 1.5vw, 14px);
     border-radius: 8px;
     border: none;
     background: white;
     color: #0077ff;
     cursor: pointer;
     margin-top: 10px;
-}
-
-/* 🔥 RESPONSIVE FIXES */
-
-/* TABLET */
-
-@media (max-width: 900px) {
-    .main-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .left-content {
-        max-width: 100%;
-    }
-}
-
-/* MOBILE */
-
-@media (max-width: 480px) {
-    .left-content h1 {
-        font-size: 28px;
-    }
-
-    .left-content p {
-        font-size: 14px;
-    }
-
-    .auth-box {
-        max-width: 100%;
-    }
+    font-size: clamp(14px, 1.2vw, 18px);
 }
 
 /* GOOGLE BUTTON */
-
 .google-btn-container {
     margin-top: 15px;
     display: flex;
@@ -222,7 +176,6 @@ button {
 }
 
 /* PROFILE */
-
 .profile-box {
     position: fixed;
     top: 20px;
@@ -241,4 +194,92 @@ button {
     width: 35px;
     height: 35px;
     border-radius: 50%;
+}
+
+/* ========================= */
+/* 📱 MOBILE (0–480px) */
+/* ========================= */
+@media (max-width: 480px) {
+
+    .main-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .auth-box {
+        width: 100%;
+        height: 50%;
+    }
+
+    .form {
+        padding: 15px;
+    }
+
+    .profile-box {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+    }
+}
+
+/* ========================= */
+/* 📲 TABLET (481px–900px) */
+/* ========================= */
+@media (min-width: 481px) and (max-width: 900px) {
+
+    .main-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .left-content {
+        text-align: center;
+    }
+
+    .auth-box {
+        max-width: 400px;
+    }
+}
+
+/* ========================= */
+/* 💻 LAPTOP (901px–1400px) */
+/* ========================= */
+@media (min-width: 901px) and (max-width: 1400px) {
+
+    .main-container {
+        flex-direction: row;
+    }
+
+    .left-content {
+        max-width: 450px;
+    }
+}
+
+/* ========================= */
+/* 📺 TV / PROJECTOR (1400px+) */
+/* ========================= */
+@media (min-width: 1400px) {
+
+    .main-container {
+        max-width: 1600px;
+        margin: auto;
+    }
+
+    .left-content h1 {
+        font-size: 70px;
+    }
+
+    .left-content p {
+        font-size: 24px;
+    }
+
+    .auth-box {
+        max-width: 550px;
+        padding: 40px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 16px;
+    }
 }
