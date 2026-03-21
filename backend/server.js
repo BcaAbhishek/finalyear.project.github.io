@@ -33,8 +33,8 @@ app.listen(PORT, () => {
 });
 app.use(cors({
   origin: "*"
-<<<<<<< HEAD
+
 }));
-=======
+
 }));
->>>>>>> 30185fb800b410d4eb4f547a72b4607550dbcc8b
+
