@@ -124,6 +124,7 @@ button {
     margin: 20px;
     display: none;
     animation: blink 1s infinite;
+    color: whitesmoke;
 }
 
 @keyframes blink {
